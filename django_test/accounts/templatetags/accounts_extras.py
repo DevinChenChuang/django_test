@@ -18,5 +18,21 @@ def warning(value):
 
 register.filter('warning', warning)
 
+
 # 金额过滤器 1,000.00
-# TODO
+def money(value):
+    value = '{:.2f}'.format(value)
+    list_money = list(str(value))
+    list_money.reverse()
+    j = 0
+    for i in range(len(list_money)):
+        if (i-3) > 0 and (i-3) % 3 == 0:
+            list_money.insert(i + j, ',')
+            j += 1
+    list_money.reverse()
+    final_money = "".join(list_money)
+    return final_money
+
+
+register.filter("money", money)
+

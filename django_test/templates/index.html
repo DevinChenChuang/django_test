@@ -6,10 +6,13 @@
         div.time{color: red;}
     </style>
     <title>天天向上</title>
+
 </head>
 <body>
     <h1>学习目录</h1>
-    <div class="time">{{now}}</div>
-    <div>登录</div><div>注册</div>
+    <div class="time">{{now|date:"Y-m-d H:i:s"}}</div>
+    <a href="accounts/login"> <input type="submit" value="登录"></a><div>注册<div>
+    {% load accounts_extras %}
+    <div>金钱的特殊处理：{{money2|money}}</div>
 </body>
 </html>

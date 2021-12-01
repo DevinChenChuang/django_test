@@ -9,7 +9,8 @@ from django_test import settings
 
 def index(request):
     now = datetime.now()
-    return render(request, 'index.html', {'now': now})
+    money2 = 1000000000.69
+    return render(request, 'index.html', {'now': now, 'money2': money2})
 
 
 def login(request):
