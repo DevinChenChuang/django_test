@@ -11,7 +11,8 @@
 <body>
     <h1>学习目录</h1>
     <div class="time">{{now|date:"Y-m-d H:i:s"}}</div>
-    <a href="accounts/login"> <input type="submit" value="登录"></a><div>注册<div>
+    <a href="{% url 'login' %}"> <input type="submit" value="登录"></a>
+    <a href="{% url 'register' %}"> <input type="submit" value="注册"></a>
     {% load accounts_extras %}
     <div>金钱的特殊处理：{{money2|money}}</div>
 </body>
